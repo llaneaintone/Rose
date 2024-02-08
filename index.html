@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+  <meta name="google-site-verification" content="__Hbo_p0s0Xss3mbkQRZJxsVe6SiB25x3qRlGXPDR5g" />
+    <link rel="icon" href="/valentine.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Kawaii', sans-serif;
+            color: black;
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #yesButton, #noButton {
+            padding: 10px 20px;
+
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #yesButton {
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+        }
+        #yesButton:hover {
+          transform: rotate(-5deg);
+        }
+
+        #noButton {
+            background-color: #f44336;
+            color: white;
+            font-weight: bold;
+        }
+        #noButton:hover {
+          transform: rotate(5deg);
+          background-Color: #ff6b6b;
+        }
+
+        #result {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        video {
+          width: 200px;
+        }
+      .ar {
+        font-weight: bold;
+        background-color: white;
+        color: black;
+      }
+
+      .notification-container {
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+
+      .notification {
+        max-width: 700px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: column;
+        flex-direction: column;
+      }
+      
+      @media (max-width: 768px) {
+        .notification-container {
+          top: 50%; 
+        }
+        .notification {
+          max-width: 1000px;
+          width: 40vh;
+        }
+      }
+
+      .close-icon {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+        color: #888;
+      }
+
+      .close-icon:hover {
+        color: #555;
+      }
+      .ar {
+        font-weight: bold;
+        background-color: white;
+        color: black;
+      }
+    </style>
+</head>
+<body>
+    <div id="content">
+           <div id="video-container">
+               <video id="vid" muted src="TeddyBear.mp4" autoplay loop playsinline></video>
+           </div>
+        <h1 id="h1">Will you be my valentine?</h1>
+        <button id="yesButton" onclick="showResult(true)">Yes</button>
+        <button id="noButton" onclick="showResult(false)">No</button>
+        <div id="result"></div>
+    </div>
+  <div class="notification-container">
+    <div class="notification">
+      <h1>Mary Rose Villaseca Nemis</h1><br>
+      <p>Dear My Lovely Rose , I love you so much! You are the most beautiful girl in this world to me And im grateful that i have you in my life. Will you Be My....
+        <a class="ar" href="https://open.spotify.com/playlist/6rb5YdFZNdTkzUtAsGXaGx"><p>Please Listen Babe</p></a>
+      <span class="close-icon">&times;</span>
+    </div>
+  </div>
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        font-size: 12px
+    }
+  .ad {
+    font-weight: bold;
+    color: white;
+    
+  }
+  .Ln {
+    font-weight: bold;
+    color: white;
+    
+  }
+</style>
+
+<div class="footer">
+    <p>I LOVE YOU BABE ❤️ • <a class="ad" href="index2.html">Flowers for you</a> • <a class="ad" href="https://open.spotify.com/playlist/1Vwgcz1RVNBsqYnJj7hSTb"> Spotify</a> </p>
+</div>
+    <script>
+      var closeIcon = document.querySelector('.close-icon');
+
+      closeIcon.addEventListener('click', function() {
+        document.querySelector('.notification').style.display = 'none';
+      });
+    </script>
+
+    <script>
+        function showResult(isYes) {
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            const resultDiv = document.getElementById('result');
+            const video = document.getElementById('vid');
+            const h1 = document.getElementById('h1');
+
+            if (isYes) {
+                yesButton.remove();
+                noButton.remove();
+                vid.src = "/true.mov";
+                resultDiv.innerHTML = 'I love you Babe!!! ❤️ and Please click the flowers below!';
+                resultDiv.style.display = 'block';
+                h1.style.fontSize = 0;
+            } else {
+                const noTexts = ["whyyyyyyyyyyy :(", "consider this again pls", "ur breaking my heart ;((",
+                                 "pls click the button named yes", "i love you pls click yes <3", "ima buy u a hello kitty plush if u agree","ur losing a chance frrr", "i beg on my knees pls agree", "are u sure?", "100% sure?", "think again", "u might regret this!", "r u absolutely sure?", "have a heart!"];
+                const randomIndex = Math.floor(Math.random() * noTexts.length);
+                yesButton.style.width = (yesButton.offsetWidth + 25) + 'px';
+                yesButton.style.height = (yesButton.offsetHeight + 25) + 'px';
+                noButton.innerHTML = noTexts[randomIndex];
+                yesButton.style.fontSize = (yesButton.offsetWidth / 3) + 'px';
+            }
+        }
+    </script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'851ac1495d1d6874',t:'MTcwNzI5OTcwMy40NDYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
